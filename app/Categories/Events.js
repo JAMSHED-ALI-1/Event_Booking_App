@@ -19,9 +19,9 @@ function Events({ route, navigation }) {
         renderItem={({ item }) => (
           <SearchCard
             title={item.Adi}
-            image={item.KucukAfis}
+            image={item.Images}
             date={item.EtkinlikBaslamaTarihi}
-            location={item.EtkinlikMerkezi}
+            location={item.Location}
             onPress={() => navigation.navigate("EventDetail", { id: item.Id })}
           />
         )}

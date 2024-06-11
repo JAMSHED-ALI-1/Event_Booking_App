@@ -90,44 +90,32 @@ function HomeMainScreen({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      {loading ? (
-        <View
-          style={{
-            flex: 1,
-            alignItems: "center",
-            top: "40%",
-          }}
-        >
-          <View>
-            <ActivityIndicator size="large" color="#76468F" />
-          </View>
-        </View>
-      ) : (
+  
         <View>
           <ScrollView>
             <View style={styles.firstView}>
-              <FeaturedEvent data={featuredEvent[0]} />
+              {/* <FeaturedEvent data={featuredEvent[0]} /> */}
             </View>
             <View style={styles.secondView}>
-              <EventsList
+              {/* <EventsList
                 title={"Bu Hafta Etkinlikleri"}
                 data={todayEvent}
                 navigation={navigation}
-              />
-              <EventsList
+              /> */}
+              {/* <EventsList
                 title={"Öne Çıkan Etkinlikler"}
                 data={featuredEvent}
                 navigation={navigation}
-              />
+              /> */}
               <EventsList
-                title={"Geçmiş Etkinlikler"}
+                title={"Speaker"}
                 data={oldEvents}
                 navigation={navigation}
               />
             </View>
           </ScrollView>
         </View>
-      )}
+     
     </SafeAreaView>
   );
 }

@@ -3,7 +3,7 @@ import { Image, Text, View } from "react-native";
 import { styles } from "../../Home/homecss";
 
 function FeaturedEvent({ data }) {
-  const { Adi, KucukAfis, EtkinlikBaslamaTarihi } = data;
+  const { Adi, Images, EtkinlikBaslamaTarihi } = data;
   return (
     <View style={styles.featuredEvent}>
       <View
@@ -15,8 +15,8 @@ function FeaturedEvent({ data }) {
       >
         <Image
           source={
-            KucukAfis
-              ? { uri: KucukAfis }
+            Images
+              ? { uri: Images }
               : require("../../../assets/featured.png")
           }
           style={{

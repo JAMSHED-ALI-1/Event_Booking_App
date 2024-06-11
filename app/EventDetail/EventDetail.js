@@ -15,10 +15,10 @@ function EventDetail({ route }) {
       const { id } = route.params;
       const event = await getEventById(id);
       setEvent(event);
-      if (event?.EtkinlikMerkeziKonum) {
+      if (event?.MapLocation) {
         setLocation(
-          event.EtkinlikMerkeziKonum
-            ? event.EtkinlikMerkeziKonum
+          event.MapLocation
+            ? event.MapLocation
             : ["41.015137", "28.979530"]
         );
       } else {
@@ -32,7 +32,7 @@ function EventDetail({ route }) {
       <ScrollView>
         <View style={{ width: "100%" }}>
           <View style={styles.imageContainer}>
-            <Image source={{ uri: `${event.KucukAfis}` }} style={styles.img} />
+            <Image source={{ uri: `${event.Images}` }} style={styles.img} />
             <View style={styles.cardInImage}>
               <View style={styles.cardInCardInImage}>
                 <Text
@@ -51,7 +51,7 @@ function EventDetail({ route }) {
                   }}
                 >
                   <FontAwesome name="map-marker" size={15} color="black" />
-                  <Text>{event.EtkinlikMerkezi}</Text>
+                  <Text>{event.Location}</Text>
                 </View>
                 <View
                   style={{
@@ -155,7 +155,7 @@ function EventDetail({ route }) {
               elevation: 5,
             }}
           >
-            {event.EtkinlikMerkeziKonum ? (
+            {event.MapLocation ? (
               <MapView
                 style={{
                   width: Dimensions.get("window").width,
@@ -164,8 +164,8 @@ function EventDetail({ route }) {
                 }}
                 region={
                   location && {
-                    latitude: parseFloat(location["Enlem"]),
-                    longitude: parseFloat(location["Boylam"]),
+                    latitude: parseFloat(location["Langi"]),
+                    longitude: parseFloat(location["Lati"]),
                     latitudeDelta: 0.0922,
                     longitudeDelta: 0.0421,
                   }
@@ -178,8 +178,8 @@ function EventDetail({ route }) {
                 <Marker
                   coordinate={
                     location && {
-                      latitude: parseFloat(location["Enlem"]),
-                      longitude: parseFloat(location["Boylam"]),
+                      latitude: parseFloat(location["Langi"]),
+                      longitude: parseFloat(location["Lati"]),
                     }
                   }
                   title="Marker"

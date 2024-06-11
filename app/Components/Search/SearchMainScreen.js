@@ -132,8 +132,8 @@ function SearchMainScreen({ navigation }) {
             <SearchCard
               title={item.Adi}
               date={item.EtkinlikBaslamaTarihi}
-              location={item.EtkinlikMerkezi}
-              image={item.KucukAfis}
+              location={item.Location}
+              image={item.Images}
               onPress={() => {
                 navigation.navigate("EventDetail", {
                   title: item.Adi,
